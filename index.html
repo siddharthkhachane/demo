@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Architecture Diagrams</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#050914;
+    font-family:system-ui;
+    color:white;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px;
+}
+
+.tabs{
+    display:flex;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.tab{
+    padding:10px 20px;
+    background:#0c1426;
+    border:1px solid #24344f;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.tab.active{
+    background:#1b2c4f;
+}
+
+.image-box{
+    border:1px solid #24344f;
+    border-radius:10px;
+    padding:20px;
+    background:#071022;
+}
+
+img{
+    width:100%;
+    border-radius:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="tabs">
+<div class="tab active" onclick="showTab('ukg')">UKG</div>
+<div class="tab" onclick="showTab('feather')">Feather</div>
+<div class="tab" onclick="showTab('wordslayer')">WordSlayer</div>
+<div class="tab" onclick="showTab('nldeploy')">NLDeploy</div>
+</div>
+
+<div class="image-box">
+
+<img id="diagram" src="ukg.png">
+
+</div>
+
+</div>
+
+<script>
+
+function showTab(name){
+
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'))
+event.target.classList.add('active')
+
+if(name==="ukg") document.getElementById("diagram").src="ukg.png"
+if(name==="feather") document.getElementById("diagram").src="feather.png"
+if(name==="wordslayer") document.getElementById("diagram").src="wordslayer.png"
+if(name==="nldeploy") document.getElementById("diagram").src="nldeploy.png"
+
+}
+
+</script>
+
+</body>
+</html>
